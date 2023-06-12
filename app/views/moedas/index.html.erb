@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Moedas</h1>
+
+<div id="moedas">
+  <% @moedas.each do |moeda| %>
+    <%= render moeda %>
+    <p>
+      <%= link_to "Exibir essa moeda", moeda %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nova moeda", new_moeda_path %>

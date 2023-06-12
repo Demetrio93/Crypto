@@ -1,0 +1,32 @@
+<%= form_with(model: moeda) do |form| %>
+  <% if moeda.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(moeda.errors.count, "error") %> prohibited this moeda from being saved:</h2>
+
+      <ul>
+        <% moeda.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :descricao, style: "display: block" %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div>
+    <%= form.label :sigla, style: "display: block" %>
+    <%= form.text_field :sigla %>
+  </div>
+
+  <div>
+    <%= form.label :imagem, style: "display: block" %>
+    <%= form.text_field :imagem %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
