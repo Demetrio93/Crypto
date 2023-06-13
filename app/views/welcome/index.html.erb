@@ -1,5 +1,7 @@
 <h1>Seja Bem-Vindo!</h1>
 
+<p><strong>Data:</strong> <%= data_br(Date.today) %></p>
+
 <ul>
     <li>
         <%= link_to "Cadastrar nova Moeda", new_moeda_path %>
@@ -8,3 +10,5 @@
         <%= link_to "Moedas Cadastradas", moedas_path %>
     </li>
 </ul>
+
+<p> Meu nome é: <%= @nome %> </p>
