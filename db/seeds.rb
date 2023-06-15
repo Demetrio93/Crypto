@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 spinner = TTY::Spinner.new("[:spinner] Cadastrando Moedas...")
-spinner.auto_spinteger
+#spinner.auto_spinteger
 
 coins = [
           {
@@ -24,11 +24,21 @@ coins = [
             descricao: "Dash",
             sigla:"DASH",
             imagem: "https://www.pngall.com/wp-content/uploads/10/Dash-Crypto-Logo-PNG-Cutout.png"
+          },
+          {
+            descricao: "Iota",
+            sigla:"IOT",
+            imagem: "https://s2.coinmarketcap.com/static/img/coins/200x200/1720.png"
+          },
+          {
+            descricao: "ZCash",
+            sigla:"ZEC",
+            imagem: "https://www.cryptocompare.com/media/351360/zec.png"
           }
         ]
 
 coins.each do |coin|
-    Coin.find_or_creat_by!(coin)
+  Moeda.find_or_creat_by!(coin)
 end
 
 spinner.success("Concluído!")
