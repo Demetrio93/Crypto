@@ -1,6 +1,7 @@
 class MoedasController < ApplicationController
   layout "adm"
   before_action :set_moeda, only: %i[ show edit update destroy ]
+  before_action :set_mining_type_options, only: [:new, :create, :edit, :update]
 
   # GET /moedas or /moedas.json
   def index
@@ -59,6 +60,11 @@ class MoedasController < ApplicationController
   end
 
   private
+    # Selecionar o tipo de mineração na edição de uma moeda.
+    def set_mining_type_options
+      @mining_type_options = MiningType.all.pluck(:description, :id)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_moeda
       @moeda = Moeda.find(params[:id])
@@ -66,6 +72,6 @@ class MoedasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def moeda_params
-      params.require(:moeda).permit(:descricao, :sigla, :imagem)
+      params.require(:moeda).permit(:descricao, :sigla, :imagem, :mining_type_id)
     end
 end

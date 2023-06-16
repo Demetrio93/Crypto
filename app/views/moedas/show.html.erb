@@ -3,8 +3,8 @@
 <%= render @moeda %>
 
 <div>
-  <%= link_to "Editar essa moeda", edit_moeda_path(@moeda) %> |
+  <%= link_to t('links.edit'), edit_moeda_path(@moeda) %> |
   <%= link_to "Voltar à tela inicial", moedas_path %>
 
-  <%= button_to "Excluir essa moeda", @moeda, method: :delete %>
+  <%= button_to t('links.delete'), @moeda, method: :delete %>
 </div>
