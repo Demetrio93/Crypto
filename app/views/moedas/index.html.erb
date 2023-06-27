@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Moedas</h1>
-<h2><%= cookies[:curso]%></h2>
 
 <div id="moedas">
   <% @moedas.each do |moeda| %>
@@ -12,4 +11,4 @@
   <% end %>
 </div>
 
-<%= link_to "Nova moeda", new_moeda_path %>
+<%= link_to t('links.new'), new_moeda_path, class:"btn btn-primary" %>
